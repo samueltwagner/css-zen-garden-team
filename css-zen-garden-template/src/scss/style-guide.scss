@@ -4,11 +4,18 @@
 
 // color palette - these colors will be the color swatches of the Colors section
 
-$color-1: #5f8ee4; // Cornflower Blue - Action color
-$color-2: #19191a; // Dark Blue
-$color-3: #e4655f; // Red
-$color-4: #e6e6e6; // light grey
-$color-5: #ffffff; // white
+// $color-1: #5f8ee4; // Cornflower Blue - Action color
+// $color-2: #19191a; // Dark Blue
+// $color-3: #e4655f; // Red
+// $color-4: #e6e6e6; // light grey
+// $color-5: #ffffff; // white
+
+// Our Colors
+$color-1: #121212; // Black - Action color
+$color-2: #333333; // Grey
+$color-3: #ED413B; // Red
+$color-4: #C9F7FE; // Light Blue
+$color-5: #fafafa; // White
 
 // additional colors
 
@@ -51,86 +58,7 @@ xNavigation
 
 -------------------------------- */
 
-header {
-  background-color: $color-2;
-}
-
-.cd-logo {
-  /* logo box style */
-  background-color: $color-1;
-  width: 120px;
-
-  @include MQ(M) {
-    width: 180px;
-  }
-}
-
-.cd-main-nav {
-  /* main navigation background color - full screen on small devices */
-  background: $color-2;
-
-  li a {
-    color: $color-5;
-    border-color: lighten($color-2, 5%);
-  }
-
-  @include MQ(M) {
-    li a {
-      color: lighten($color-2, 40%);
-
-      &.selected {
-        color: $color-5;
-        box-shadow: 0 2px 0 $color-1;
-      }
-
-      &:hover {
-        color: $color-5;
-      }
-    }
-  }
-}
-
-.cd-nav-trigger span {
-  /* hamburger menu */
-  background-color: $color-5;
-
-  &::before,
-  &::after {
-    /* upper and lower lines */
-    background-color: $color-5;
-  }
-}
-
-.nav-is-visible .cd-nav-trigger span {
-  /* hide line in the center on mobile when nav is visible */
-  background-color: rgba($color-5, 0);
-
-  &::before,
-  &::after {
-    /* preserve visibility of upper and lower lines - close icon */
-    background-color: rgba($color-5, 1);
-  }
-}
-
-.cd-download {
-  /* download button top-right visible on big devices */
-  background-color: lighten($color-2, 10%);
-
-  .no-touch &:hover {
-    background-color: lighten($color-2, 15%);
-  }
-
-  span {
-    /* tooltip */
-    background: $color-1;
-    color: $color-5;
-
-    &::before {
-      /* right arrow color */
-      border-color: $color-1;
-    }
-  }
-}
+@import 'partials/_navigation';
 
 /* -------------------------------- 
 
@@ -179,63 +107,7 @@ xButtons
 
 -------------------------------- */
 
-.btn {
-  border: none;
-  box-shadow: none;
-  border-radius: 0.25em;
-  font: {
-    size: 1.4rem;
-    family: $secondary-font;
-  }
-  color: $color-5;
-  padding: 0.6em 2.2em;
-  cursor: pointer;
-  background: $color-1;
-
-  &:focus {
-    outline: none;
-  }
-
-  .no-touch &:hover {
-    background: lighten($color-1, 5%);
-  }
-
-  &.btn-success {
-    background: $success;
-
-    .no-touch &:hover {
-      background: lighten($success, 5%);
-    }
-  }
-
-  &.btn-alert {
-    background: $alert;
-
-    .no-touch &:hover {
-      background: lighten($alert, 5%);
-    }
-  }
-
-  &.btn-outline {
-    color: $color-1;
-    background: transparent;
-    box-shadow: inset 0 0 0 1px $color-1;
-
-    .no-touch &:hover {
-      color: $color-5;
-      background: $color-1;
-    }
-  }
-
-  @include MQ(S) {
-    font-size: 1.6rem;
-  }
-}
-
-.cd-buttons .cd-box:nth-of-type(2) span {
-  /* CSS class name color */
-  color: $color-1;
-}
+@import 'partials/_buttons';
 
 /* -------------------------------- 
 
@@ -243,11 +115,7 @@ xIcons
 
 -------------------------------- */
 
-.cd-icons li {
-  /* icons size */
-  width: 32px;
-  height: 32px;
-}
+@import 'partials/_icons';
 
 /* -------------------------------- 
 
@@ -255,6 +123,7 @@ xForm
 
 -------------------------------- */
 
+// We don't need to worry about this section
 input[type='text'],
 select {
   border: 1px solid $color-4;

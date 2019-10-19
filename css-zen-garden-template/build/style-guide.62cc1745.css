@@ -2,6 +2,8 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url("https://fonts.googleapis.com/css?family=Long+Cang&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Gothic+A1:500,900&display=swap");
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -59,7 +61,7 @@ xBackground
 -------------------------------- */
 body {
   /* this is the page background */
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 /* -------------------------------- 
@@ -69,9 +71,9 @@ xPatterns
 -------------------------------- */
 .cd-box {
   /* this is the container of various design elements - i.e. the 2 logo of the branding section */
-  border: 1px solid #e6e6e6;
+  border: 1px solid #C9F7FE;
   border-radius: 3px;
-  background: #ffffff;
+  background: #fafafa;
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   padding: 6px;
 }
@@ -82,12 +84,12 @@ xNavigation
 
 -------------------------------- */
 header {
-  background-color: #19191a;
+  background-color: #333333;
 }
 
 .cd-logo {
   /* logo box style */
-  background-color: #5f8ee4;
+  background-color: #121212;
   width: 120px;
 }
 @media only screen and (min-width: 1024px) {
@@ -98,58 +100,58 @@ header {
 
 .cd-main-nav {
   /* main navigation background color - full screen on small devices */
-  background: #19191a;
+  background: #333333;
 }
 .cd-main-nav li a {
-  color: #ffffff;
-  border-color: #262627;
+  color: #fafafa;
+  border-color: #404040;
 }
 @media only screen and (min-width: 1024px) {
   .cd-main-nav li a {
-    color: #7d7d82;
+    color: #999999;
   }
   .cd-main-nav li a.selected {
-    color: #ffffff;
-    box-shadow: 0 2px 0 #5f8ee4;
+    color: #fafafa;
+    box-shadow: 0 2px 0 #121212;
   }
   .cd-main-nav li a:hover {
-    color: #ffffff;
+    color: #fafafa;
   }
 }
 
 .cd-nav-trigger span {
   /* hamburger menu */
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 .cd-nav-trigger span::before, .cd-nav-trigger span::after {
   /* upper and lower lines */
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 .nav-is-visible .cd-nav-trigger span {
   /* hide line in the center on mobile when nav is visible */
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(250, 250, 250, 0);
 }
 .nav-is-visible .cd-nav-trigger span::before, .nav-is-visible .cd-nav-trigger span::after {
   /* preserve visibility of upper and lower lines - close icon */
-  background-color: white;
+  background-color: #fafafa;
 }
 
 .cd-download {
   /* download button top-right visible on big devices */
-  background-color: #323234;
+  background-color: #4d4d4d;
 }
 .no-touch .cd-download:hover {
-  background-color: #3f3f41;
+  background-color: #595959;
 }
 .cd-download span {
   /* tooltip */
-  background: #5f8ee4;
-  color: #ffffff;
+  background: #121212;
+  color: #fafafa;
 }
 .cd-download span::before {
   /* right arrow color */
-  border-color: #5f8ee4;
+  border-color: #121212;
 }
 
 /* -------------------------------- 
@@ -158,12 +160,12 @@ xPage title
 
 -------------------------------- */
 main > h1 {
-  color: #19191a;
+  color: #333333;
 }
 @media only screen and (min-width: 1600px) {
   main > h1 {
     /* title goes into the header on big devices */
-    color: #ffffff;
+    color: #fafafa;
   }
 }
 
@@ -172,53 +174,52 @@ main > h1 {
 xTypography 
 
 -------------------------------- */
-h1,
-h2 {
-  font-family: "Open Sans", sans-serif;
-  color: #19191a;
+/* GOOGLE FONTS: */
+/* SUB-HEADING FONT */
+/* font-family: 'Long Cang', cursive; */
+/* HEADING/BODY FONT */
+/* font-family: 'Gothic A1', sans-serif; */
+/* FONTS */
+h1, h2, h3 {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 900;
 }
 
 h1 {
-  font-size: 2.4rem;
-  font-weight: 300;
-  line-height: 1.2;
-  margin: 0 0 0.4em;
-}
-@media only screen and (min-width: 768px) {
-  h1 {
-    font-size: 3.2rem;
-  }
-}
-@media only screen and (min-width: 1024px) {
-  h1 {
-    font-size: 4rem;
-  }
+  font-size: 100px;
 }
 
 h2 {
-  font-weight: bold;
-  text-transform: uppercase;
-  margin: 1em 0;
+  font-size: 50px;
 }
-@media only screen and (min-width: 768px) {
-  h2 {
-    font-size: 1.8rem;
-    margin: 1em 0 1.4em;
-  }
+
+h3 {
+  font-size: 1.17em;
+}
+
+h4 {
+  font-size: 1.17em;
+}
+
+h4, h5, h6 {
+  font-family: "Long Cang", cursive;
+}
+
+p {
+  font-family: "Gothic A1", sans-serif;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: #737373;
 }
 
 section > h2::before {
   /* number before each section title */
-  color: silver;
+  color: #7eecfd;
 }
 
-p {
-  font-size: 1.4rem;
-  line-height: 1.4;
-  color: #58585b;
-}
 p a {
-  color: #5f8ee4;
+  color: #121212;
   text-decoration: underline;
 }
 @media only screen and (min-width: 768px) {
@@ -239,16 +240,16 @@ xButtons
   border-radius: 0.25em;
   font-size: 1.4rem;
   font-family: "Open Sans", sans-serif;
-  color: #ffffff;
+  color: #fafafa;
   padding: 0.6em 2.2em;
   cursor: pointer;
-  background: #5f8ee4;
+  background: #121212;
 }
 .btn:focus {
   outline: none;
 }
 .no-touch .btn:hover {
-  background: #759de8;
+  background: #1f1f1f;
 }
 .btn.btn-success {
   background: #6fce72;
@@ -257,19 +258,19 @@ xButtons
   background: #82d485;
 }
 .btn.btn-alert {
-  background: #e4655f;
+  background: #ED413B;
 }
 .no-touch .btn.btn-alert:hover {
-  background: #e87a75;
+  background: #ef5852;
 }
 .btn.btn-outline {
-  color: #5f8ee4;
+  color: #121212;
   background: transparent;
-  box-shadow: inset 0 0 0 1px #5f8ee4;
+  box-shadow: inset 0 0 0 1px #121212;
 }
 .no-touch .btn.btn-outline:hover {
-  color: #ffffff;
-  background: #5f8ee4;
+  color: #fafafa;
+  background: #121212;
 }
 @media only screen and (min-width: 768px) {
   .btn {
@@ -279,7 +280,7 @@ xButtons
 
 .cd-buttons .cd-box:nth-of-type(2) span {
   /* CSS class name color */
-  color: #5f8ee4;
+  color: #121212;
 }
 
 /* -------------------------------- 
@@ -300,9 +301,9 @@ xForm
 -------------------------------- */
 input[type=text],
 select {
-  border: 1px solid #e6e6e6;
+  border: 1px solid #C9F7FE;
   border-radius: 0.25em;
-  background: #ffffff;
+  background: #fafafa;
 }
 input[type=text]:focus,
 select:focus {
@@ -318,12 +319,12 @@ input[type=text].success {
   box-shadow: 0 0 6px rgba(111, 206, 114, 0.2);
 }
 input[type=text].alert {
-  border-color: #e4655f;
-  box-shadow: 0 0 6px rgba(228, 101, 95, 0.2);
+  border-color: #ED413B;
+  box-shadow: 0 0 6px rgba(237, 65, 59, 0.2);
 }
 input[type=text]:focus {
-  border-color: #5f8ee4;
-  box-shadow: 0 0 6px rgba(95, 142, 228, 0.2);
+  border-color: #121212;
+  box-shadow: 0 0 6px rgba(18, 18, 18, 0.2);
 }
 
 input[type=radio],
@@ -363,7 +364,7 @@ input[type=checkbox] {
 .radio-label::before,
 .checkbox-label::before {
   left: 0;
-  border: 1px solid #e6e6e6;
+  border: 1px solid #C9F7FE;
   box-shadow: inset 1px 1px rgba(0, 0, 0, 0.03);
 }
 .radio-label::after,
@@ -383,7 +384,7 @@ input[type=checkbox] {
 
 input[type=radio]:checked + label::before,
 input[type=checkbox]:checked + label::before {
-  background-color: #19191a;
+  background-color: #333333;
   border: none;
   box-shadow: none;
 }
@@ -894,49 +895,49 @@ section:nth-of-type(10) h2::before {
   padding: 0.6em 0;
 }
 .cd-colors li:nth-of-type(1) .cd-color-swatch {
-  background: #5f8ee4;
+  background: #121212;
 }
 .cd-colors li:nth-of-type(1) .cd-color-swatch::before {
-  background: #759de8;
+  background: #1f1f1f;
 }
 .cd-colors li:nth-of-type(1) .cd-color-swatch::after {
-  background: #497fe0;
+  background: #050505;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch {
-  background: #19191a;
+  background: #333333;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch::before {
-  background: #262627;
+  background: #404040;
 }
 .cd-colors li:nth-of-type(2) .cd-color-swatch::after {
-  background: #0d0d0d;
+  background: #262626;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch {
-  background: #e4655f;
+  background: #ED413B;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch::before {
-  background: #e87a75;
+  background: #ef5852;
 }
 .cd-colors li:nth-of-type(3) .cd-color-swatch::after {
-  background: #e05049;
+  background: #eb2a24;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch {
-  background: #e6e6e6;
+  background: #C9F7FE;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch::before {
-  background: #f3f3f3;
+  background: #e2fbfe;
 }
 .cd-colors li:nth-of-type(4) .cd-color-swatch::after {
-  background: #d9d9d9;
+  background: #b0f3fe;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch {
-  background: #ffffff;
+  background: #fafafa;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch::before {
   background: white;
 }
 .cd-colors li:nth-of-type(5) .cd-color-swatch::after {
-  background: #f2f2f2;
+  background: #ededed;
 }
 @media only screen and (min-width: 768px) {
   .cd-colors li {
@@ -970,7 +971,7 @@ section:nth-of-type(10) h2::before {
 /* xTypography section - basic style */
 .cd-typography h1::before {
   content: "Aa - ";
-  color: #5f8ee4;
+  color: #121212;
 }
 
 .cd-buttons .cd-box:first-of-type {
