@@ -1,3 +1,28 @@
+// added styles for the 8th section on the index
+#navigation {
+  .cd-box {
+    background-color: $color-1;
+  }
+  h3 {
+    margin-left: 1em;
+    margin-bottom: 1em;
+    color: $color-5;
+  }
+  li {
+    padding-bottom: 1em;
+  }
+  a {
+    color: $color-5;
+    &:hover {
+      color: $color-3;
+    }
+  }
+  .cd-secondary-nav {
+    a:hover {
+      color: $color-4;
+    }
+  }
+} 
 
 // The styles below were copied from the style-guide
 header {
