@@ -1,3 +1,5 @@
+// COMMAND LINE: sass --watch scss/styles-main.scss:css/styles-main.css
+
 @import 'partials/reset';
 @import 'partials/prefix-mixins';
 @import 'partials/layout'; // responsive grid and media queries
