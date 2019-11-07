@@ -117,79 +117,138 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/main.js":[function(require,module,exports) {
+/*******************
+		color swatch
+	********************/
+//convert rgba color to hex color
+var rbgToHex = function rbgToHex(elem) {
+  if (elem.currentStyle) var bg = elem.currentStyle['background-color'];else if (window.getComputedStyle) var bg = document.defaultView.getComputedStyle(elem, null).getPropertyValue('background-color');
+  if (bg.search('rgb') == -1) return bg;else {
+    var hex = function hex(x) {
+      return ('0' + parseInt(x).toString(16)).slice(-2);
+    };
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
+    bg = bg.match(/^rgb\((\d+),\s*(\d+),\s*(\d+)\)$/);
+    return '#' + hex(bg[1]) + hex(bg[2]) + hex(bg[3]);
   }
+}; //set a label for each color swatch
 
-  return bundleURL;
-}
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+var colorBoxes = document.querySelectorAll('.cd-color-swatch');
+colorBoxes.forEach(function (element) {
+  var newElement = document.createElement('b');
+  newElement.innerText = rbgToHex(element);
+  element.parentNode.appendChild(newElement);
+});
+/*******************
+		buttons
+  ********************/
 
-    if (matches) {
-      return getBaseURL(matches[0]);
+var buttonsWrapper = document.querySelector('#buttons .cd-box'),
+    buttonsHtml = buttonsWrapper.innerHTML;
+var containerHtml = document.createElement('div');
+containerHtml.classList.add('cd-box');
+buttonsWrapper.parentNode.appendChild(containerHtml);
+buttonsHtmlText = buttonsHtml.split('</button>');
+buttonsHtmlText.map(function (value) {
+  if (value.indexOf('button') >= 0) {
+    var splitText = value.split('class="'),
+        block1 = splitText[0] + 'class="';
+    block2 = splitText[1].split('"');
+    var wrapperElement = document.createElement('p');
+    wrapperElement.appendChild(document.createTextNode(block1));
+    var spanElement = document.createElement('span');
+    spanElement.appendChild(document.createTextNode(block2[0]));
+    wrapperElement.appendChild(spanElement);
+    containerHtml.appendChild(wrapperElement);
+    wrapperElement.appendChild(document.createTextNode('"' + block2[1] + '</button>'));
+  }
+});
+/*******************
+		typography
+	********************/
+
+var heading = document.querySelector('#typography h1'),
+    headingDescriptionText = heading.children[0],
+    body = heading.nextElementSibling,
+    bodyDescriptionText = body.children[0];
+setTypography(heading, headingDescriptionText);
+setTypography(body, bodyDescriptionText);
+window.addEventListener('resize', function () {
+  setTypography(heading, headingDescriptionText);
+  setTypography(body, bodyDescriptionText);
+});
+
+function setTypography(element, textElement) {
+  var cs = document.defaultView.getComputedStyle(element, null);
+  var fontSize = Math.round(cs.fontSize.replace('px', '')) + 'px',
+      fontFamily = cs.fontFamily.split(',')[0].replace(/\'/g, '').replace(/\"/g, ''),
+      fontWeight = cs.fontWeight;
+  textElement.innerText = fontWeight + ' ' + fontFamily + ' ' + fontSize;
+} //   /*******************
+// 		main  navigation
+// 	********************/
+
+
+var contentSections = document.querySelectorAll('main section'); //build navigation links
+
+var mainNavElement = document.querySelector('.cd-main-nav');
+mainNavElement.innerHTML = '';
+contentSections.forEach(function (section) {
+  var item = document.createElement('li');
+  item.innerHTML = "<a href=\"#".concat(section.id, "\">").concat(section.children[0].innerHTML, "</a>");
+  mainNavElement.appendChild(item);
+}); // open navigation on mobile
+
+document.querySelector('.cd-nav-trigger').addEventListener('click', function () {
+  document.querySelector('header').classList.toggle('nav-is-visible');
+}); // smooth scroll to the selected section
+
+document.querySelectorAll('.cd-main-nav a[href^="#"]').forEach(function (link) {
+  link.addEventListener('click', function (event) {
+    event.preventDefault();
+    var header = document.querySelector('header');
+    header.classList.remove('nav-is-visible');
+    var target = document.querySelector(this.hash),
+        topMargin = document.defaultView.getComputedStyle(target, null).marginTop.replace('px', ''),
+        headerHeight = header.scrollHeight;
+    scrollTo(document.body, parseInt(target.offsetTop - headerHeight - topMargin), 200);
+  });
+});
+
+function scrollTo(element, to, duration) {
+  if (duration <= 0) return;
+  var difference = to - element.scrollTop;
+  var perTick = difference / duration * 10;
+  setTimeout(function () {
+    element.scrollTop = element.scrollTop + perTick;
+    if (element.scrollTop === to) return;
+    scrollTo(element, to, duration - 10);
+  }, 10);
+} //update selected navigation element
+
+
+window.addEventListener('scroll', function (event) {
+  updateNavigation(event.target);
+});
+
+function updateNavigation() {
+  contentSections.forEach(function (target) {
+    var actual = target;
+    var cs = document.defaultView.getComputedStyle(actual, null);
+    var actualHeight = actual.height,
+        topMargin = cs.marginTop.replace('px', ''),
+        actualAnchor = document.querySelector('.cd-main-nav a[href="#' + actual.id + '"]');
+
+    if (parseInt(actual.offsetTop - document.querySelector('.cd-main-nav').height - topMargin) <= window.scrollY && parseInt(actual.offsetTop + actualHeight - topMargin) > window.scrollY + 1) {
+      actualAnchor.classList.add('selected');
+    } else {
+      actualAnchor.classList.remove('selected');
     }
-  }
-
-  return '/';
+  });
 }
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
-  };
-
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"scss/style-guide.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./../assets/form/icon-check.svg":[["icon-check.b3fa7148.svg","assets/form/icon-check.svg"],"assets/form/icon-check.svg"],"./../assets/form/icon-select.svg":[["icon-select.65729cd7.svg","assets/form/icon-select.svg"],"assets/form/icon-select.svg"],"./../assets/icon-download.svg":[["icon-download.b20aadac.svg","assets/icon-download.svg"],"assets/icon-download.svg"],"./../assets/icons/icon-1.svg":[["icon-1.de09c112.svg","assets/icons/icon-1.svg"],"assets/icons/icon-1.svg"],"./../assets/icons/icon-2.svg":[["icon-2.153ae19e.svg","assets/icons/icon-2.svg"],"assets/icons/icon-2.svg"],"./../assets/icons/icon-3.svg":[["icon-3.255805d5.svg","assets/icons/icon-3.svg"],"assets/icons/icon-3.svg"],"./../assets/icons/icon-4.svg":[["icon-4.51c8ed33.svg","assets/icons/icon-4.svg"],"assets/icons/icon-4.svg"],"./../assets/icons/icon-5.svg":[["icon-5.b5f82357.svg","assets/icons/icon-5.svg"],"assets/icons/icon-5.svg"],"./../assets/icons/icon-6.svg":[["icon-6.7440f143.svg","assets/icons/icon-6.svg"],"assets/icons/icon-6.svg"],"./../assets/icons/icon-7.svg":[["icon-7.d3ac3450.svg","assets/icons/icon-7.svg"],"assets/icons/icon-7.svg"],"./../assets/icons/icon-8.svg":[["icon-8.3c326c9f.svg","assets/icons/icon-8.svg"],"assets/icons/icon-8.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -393,5 +452,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], null)
-//# sourceMappingURL=/style-guide.62cc1745.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/main.js"], null)
+//# sourceMappingURL=/main.fb6bbcaf.js.map

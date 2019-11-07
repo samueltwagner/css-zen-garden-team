@@ -83,6 +83,27 @@ xPatterns
 xNavigation 
 
 -------------------------------- */
+#navigation .cd-box {
+  background-color: #121212;
+}
+#navigation h3 {
+  margin-left: 1em;
+  margin-bottom: 1em;
+  color: #fafafa;
+}
+#navigation li {
+  padding-bottom: 1em;
+}
+#navigation a {
+  color: #fafafa;
+}
+#navigation a:hover {
+  color: #ED413B;
+}
+#navigation .cd-secondary-nav a:hover {
+  color: #C9F7FE;
+}
+
 header {
   background-color: #333333;
 }
@@ -239,7 +260,7 @@ xButtons
   box-shadow: none;
   border-radius: 0.25em;
   font-size: 1.4rem;
-  font-family: "Gothic A1", sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fafafa;
   padding: 0.6em 2.2em;
   cursor: pointer;
@@ -250,22 +271,18 @@ xButtons
 }
 .no-touch .btn:hover {
   background: #1f1f1f;
-  transform: scale(1.02);
 }
 .btn.btn-success {
-  background: #C9F7FE;
-  color: #121212;
+  background: #6fce72;
 }
 .no-touch .btn.btn-success:hover {
-  background: #e2fbfe;
-  transform: scale(1.02);
+  background: #82d485;
 }
 .btn.btn-alert {
   background: #ED413B;
 }
 .no-touch .btn.btn-alert:hover {
   background: #ef5852;
-  transform: scale(1.02);
 }
 .btn.btn-outline {
   color: #121212;
@@ -275,7 +292,6 @@ xButtons
 .no-touch .btn.btn-outline:hover {
   color: #fafafa;
   background: #121212;
-  transform: scale(1.02);
 }
 @media only screen and (min-width: 768px) {
   .btn {
@@ -320,8 +336,8 @@ input[type=text] {
   box-shadow: inset 1px 1px rgba(0, 0, 0, 0.03);
 }
 input[type=text].success {
-  border-color: #C9F7FE;
-  box-shadow: 0 0 6px rgba(201, 247, 254, 0.2);
+  border-color: #6fce72;
+  box-shadow: 0 0 6px rgba(111, 206, 114, 0.2);
 }
 input[type=text].alert {
   border-color: #ED413B;

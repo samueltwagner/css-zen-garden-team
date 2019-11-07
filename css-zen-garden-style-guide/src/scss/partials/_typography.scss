@@ -1,0 +1,51 @@
+/* GOOGLE FONTS: */
+	
+	/* SUB-HEADING FONT */
+		@import url('https://fonts.googleapis.com/css?family=Long+Cang&display=swap');
+		/* font-family: 'Long Cang', cursive; */
+	
+	/* HEADING/BODY FONT */
+		@import url('https://fonts.googleapis.com/css?family=Gothic+A1:500,900&display=swap');
+		/* font-family: 'Gothic A1', sans-serif; */
+		
+//
+//
+//
+
+/* FONTS */
+$heading-font: 'Gothic A1', sans-serif;
+$body-font: 'Gothic A1', sans-serif;
+$sub-heading-font: 'Long Cang', cursive;
+	
+
+h1, h2, h3 {
+	font-family: $heading-font;
+	font-weight: 900;
+}
+h1 {
+	font-size: 100px;
+}
+
+h2 {
+	font-size: 50px;
+}
+
+h3 {
+	font-size: 1.17em;
+}
+
+h4 {
+	font-size: 1.17em;
+}
+
+h4, h5, h6 {
+	font-family: $sub-heading-font;
+}
+
+p {
+	font-family: $body-font;
+	font-weight: 500;
+	font-size: 1.4rem;
+	line-height: 1.4;
+	color: lighten($color-2, 25%);
+}
