@@ -1,4 +1,4 @@
-// COMMAND LINE: sass --watch scss/styles-main.scss:css/styles-main.css
+// COMMAND LINE: sass --watch scss/style.scss:style.css
 
 @import 'partials/reset';
 @import 'partials/prefix-mixins';
@@ -70,7 +70,6 @@ xPage title
 
 main > h1 {
   color: $color-2;
-
   @include MQ(L) {
     /* title goes into the header on big devices */
     color: $color-5;
