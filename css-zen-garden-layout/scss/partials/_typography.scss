@@ -16,7 +16,7 @@ $body-font: 'Gothic A1', sans-serif;
 $sub-heading-font: 'Long Cang', cursive;
 	
 
-h1, h2, h3 {
+h1, h3 {
 	font-family: $heading-font;
 	font-weight: 900;
 }
@@ -26,6 +26,7 @@ h1 {
 
 h2 {
 	font-size: 50px;
+	font-family: $sub-heading-font;
 }
 
 h3 {
@@ -45,5 +46,5 @@ p {
 	font-weight: 500;
 	font-size: 1.4rem;
 	line-height: 1.4;
-	color: lighten($color-2, 25%);
+	// color: lighten($color-2, 25%);
 }
