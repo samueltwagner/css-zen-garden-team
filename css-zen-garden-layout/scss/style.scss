@@ -82,3 +82,33 @@ footer {
 .zen-resources {
     grid-column-start: 2;
 }
+
+@media only screen and (max-width: 1581px) {
+    .requirements > p:last-child {
+        margin: 10em 0 10em -62%;
+    }
+    footer {
+        margin: -13em 0 0 38%;
+    }
+}
+@media only screen and (max-width: 1381px) {
+    .requirements > p:last-child {
+        margin: 10em 0 10em -75%;
+    }
+    footer {
+        margin: -13em 0 0 25%;
+    }
+}
+@media only screen and (max-width: 1581px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    .requirements > p:last-child {
+        margin: 10em 0;
+        text-align: center;
+    }
+    footer {
+        margin: -13em 0;
+        text-align: center;
+    }
+}
