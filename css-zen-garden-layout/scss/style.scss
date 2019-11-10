@@ -35,7 +35,8 @@ Intro Section
 -------------------------------- */
 .intro:before {
     content: "";
-    background-image: url(images/purple-banner.jpg);
+    // background-image: url(images/purple-banner.jpg);
+    background-color: $color-2;
     width: 100%;
     height: 58em;
     display: block;
@@ -44,116 +45,40 @@ Intro Section
     background-position: center center;
 }
 .intro {
-    text-align: center;
+    color: $color-5;
 }
 header {
     margin: -45em 0 0;
-    color: $color-5;
 }
 .summary {
-    margin: 3em 0 247px;
-    color: $color-5;
+}
+.preamble {
 }
 
 /* -------------------------------- 
-4x4 Section
+Main Section
 -------------------------------- */
-.preamble::after {
-    content: "";
-    background-image: url(images/light-purple-skinny-light-orange-LG.jpg);
-    width: 50%;
-    height: 58em;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    margin-top: -331px;
-}
-.preamble, .explanation {
-    text-align: left;
-    background-color: $color-2;
-    color: $color-5;
-    position: relative;
-}
-.preamble > h3, .preamble > p {
-    margin-left: 1000px;
-}
-
-.explanation::after {
-    content: "";
-    background-image: url(images/light-red-sky-blue-LG.jpg);
-    width: 50%;
-    height: 58em;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-    margin-top: -370px;
-    margin-left: 50%;
-}
-.explanation > h3, .explanation > p {
-    width: 50%;
-}
-.explanation > h3 {
-    margin-top: 0;
-}
-
-.participation::before {
-    content: "";
-    background-image: url(images/orange-light-blue-LG.jpg);
-    width: 100%;
-    height: 58em;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.participation > h3 {
-    margin-top: -700px;
-}
-.participation {
-    color: $color-5;
-    margin-bottom: 450px;
-}
-
-.benefits {
-    background-color: $color-5;
-    padding: 5em;
-}
-
-.requirements::before {
-    content: "";
-    background-image: url(images/light-purple-orange-green-blue-LG.jpg);
-    width: 100%;
-    height: 58em;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
-}
-.requirements > h3 {
-    margin-top: -700px;
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 .requirements {
-    color: $color-5;
-    // margin-bottom: 251px;
 }
 .requirements > p:last-child {
-    margin-top: 360px;
-    color: $color-1;
+    margin: 10em 0 10em -50%;
 }
-
 footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 5em;
+    margin: -13em 0 0 50%;
 }
 
 .wrapper {
     height: 50em;
     display: grid;
-    grid-template-areas:
-        "design-selection design-archives"
-        "design-selection zen-resources";
+    // grid-template-areas:
+    //     "design-selection design-archives"
+    //     "design-selection zen-resources";
+    grid-template-columns: 1fr 1fr;
+}
+.zen-resources {
+    grid-column-start: 2;
 }
