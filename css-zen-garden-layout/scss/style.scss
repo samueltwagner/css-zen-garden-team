@@ -20,34 +20,61 @@ $color-3: #ED413B; // Red
 $color-4: #C9F7FE; // Light Blue
 $color-5: #fafafa; // White
 
-
 /* -------------------------------- 
 General Styles
 -------------------------------- */
 body {
-  background-color: $color-5;
-  color: $color-1;
-  margin: 0;
-  padding: 0;
+    background-color: $color-5;
+    color: $color-1;
+    margin: 0;
+    padding: 0;
 }
 
 /* -------------------------------- 
-Into Section
+Intro Section
 -------------------------------- */
 .intro:before {
-  content: "";
-  background-image: url(images/purple-banner.jpg);
-  width: 100%;
-  height: 58em;
-  display: block;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+    content: "";
+    background-image: url(images/purple-banner.jpg);
+    width: 100%;
+    height: 58em;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
 }
 .intro {
-  text-align: center;
+    text-align: center;
 }
 header {
-  margin: -45em 0 29em;
-  color: $color-5;
+    margin: -45em 0 0;
+    color: $color-5;
+}
+.summary {
+    margin: 3em 0 247px;
+    color: $color-5;
+}
+
+/* -------------------------------- 
+4x4 Section
+-------------------------------- */
+.preamble::after {
+    content: "";
+    background-image: url(images/light-purple-skinny-light-orange-LG.jpg);
+    width: 50%;
+    height: 58em;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    margin-top: -331px;
+}
+.preamble {
+    text-align: left;
+    background-color: $color-2;
+    color: $color-5;
+    position: relative;
+}
+.preamble > h3, .preamble > p {
+    margin-left: 1000px;
 }
