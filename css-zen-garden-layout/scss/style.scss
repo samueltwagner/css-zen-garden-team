@@ -50,10 +50,6 @@ Intro Section
 header {
     margin: -45em 0 0;
 }
-.summary {
-}
-.preamble {
-}
 
 /* -------------------------------- 
 Main Section
@@ -74,9 +70,6 @@ footer {
 .wrapper {
     height: 50em;
     display: grid;
-    // grid-template-areas:
-    //     "design-selection design-archives"
-    //     "design-selection zen-resources";
     grid-template-columns: 1fr 1fr;
 }
 .zen-resources {
