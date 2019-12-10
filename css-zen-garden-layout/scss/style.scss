@@ -9,16 +9,9 @@ Partials
 -------------------------------- */
 @import 'partials/prefix-mixins';
 @import 'partials/_typography';
-
-/* -------------------------------- 
-Variables
--------------------------------- */
-// color palette - these colors will be the color swatches of the Colors section
-$color-1: #121212; // Black - Action color
-$color-2: #333333; // Grey
-$color-3: #ED413B; // Red
-$color-4: #C9F7FE; // Light Blue
-$color-5: #fafafa; // White
+@import 'partials/footer';
+@import 'partials/variables';
+s
 
 /* -------------------------------- 
 General Styles
@@ -68,7 +61,6 @@ footer {
 }
 
 .wrapper {
-    height: 50em;
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
@@ -104,4 +96,11 @@ footer {
         margin: -13em 0;
         text-align: center;
     }
+}
+
+@media only screen and (max-width: 700px) {
+	.wrapper {
+		display: flex;
+		flex-flow: column;
+	}
 }

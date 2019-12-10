@@ -1,0 +1,48 @@
+@import 'variables';
+
+.sidebar {
+	background: $color-1;
+}
+
+.sidebar .wrapper {
+	padding: 50px;
+}
+
+.sidebar .wrapper div {
+	height: 200px;
+}
+
+.sidebar .wrapper h3 {
+	color: $color-5;
+}
+
+.sidebar .wrapper ul {
+	padding-left: 0;
+}
+
+
+.sidebar .wrapper li {
+	text-decoration: none;
+	list-style: none;
+	color: $color-4;
+	padding: 5px 0px;
+	
+	:hover {
+		color: $color-3;
+	}
+	
+	a {
+		text-decoration: none;
+		color: $color-4;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.sidebar .wrapper div {
+	height: 300px;
+}
+
+	.sidebar .wrapper .design-archives {
+		height: 150px;
+	}
+}
