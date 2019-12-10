@@ -1,5 +1,11 @@
 @import 'variables';
 
+.requirements:last-child {
+	background-image: url(images/footer-gradient.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
 .sidebar {
 	background: $color-1;
 }
