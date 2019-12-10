@@ -1,9 +1,15 @@
 @import 'variables';
 
-.requirements:last-child {
+.requirements p:last-child {
 	background-image: url(images/footer-gradient.jpg);
+	height: 500px;
+	display: flex;
+	align-items: center;
 	background-size: cover;
 	background-position: center center;
+}
+footer{
+	margin-top: -300px;
 }
 
 .sidebar {
