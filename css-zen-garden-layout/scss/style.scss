@@ -21,13 +21,21 @@ body {
     margin: 0!important;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: $color-3;
+    &:hover {
+		text-decoration: underline;
+		color: $color-4;
+	}
+}
 
 /* -------------------------------- 
 Intro Section
 -------------------------------- */
 .intro:before {
     content: "";
-    background-image: url(images/banner-gradient.jpg);
+    background-image: url(images/banner-LG.jpg);
     background-color: $color-2;
     width: 100%;
     height: 68em;
@@ -49,9 +57,9 @@ header {
 	padding: 20px 300px;
 	text-align: center;
 	p {
-		a {
-			color: $color-4;
-		}
+		// a {
+		// 	color: $color-4;
+		// }
 	}
 }
 
@@ -82,41 +90,62 @@ Main Section
     grid-column-start: 2;
 }
 
-//Top Left
-#zen-supporting .explanation {
+//4x4 Grid
+.explanation, .participation, .benefits, .requirements {
     padding: 5em;
-    background-color: #5E5E5E;
+    color: $color-5;
+    h3 {
+        font-size: 70px;
+    }
+}
+//Top Left
+.explanation {
+    background-color: $color-1;
 }
  
 //Top Right
-#zen-supporting .participation {
-    padding: 5em;
-    background-color: $color-3;
- 
-    a {
-        text-decoration: none;
-        color: $color-4;
-    }
+.participation {
+    background-color: $color-2;
 }
 
 //Bottom Left
-#zen-supporting .benefits {
-    padding: 5em;
-    background-color: $color-4;
+.benefits {
+    padding-bottom: 0;
+    background-color: $color-2;
 }
  
 //Bottom Right
-#zen-supporting .requirements {
-    padding: 5em;
-    background-color: $color-5;
-    a {
-        text-decoration: none;
-        color: $color-3;
-    }
+.requirements {
+    // padding-bottom: 0;
+    background-color: $color-1;
+    // NEW CODE TESTING
+    // position: relative;
+    // p:last-child {
+    //     background-image: url(images/footer-new.jpg);
+    //     height: 500px;
+    //     text-align: center;
+    //     background-size: cover;
+    //     background-position: center center;
+    //     position: absolute;
+    //     left: -952px;
+    //     bottom: -1021px;
+    //     width: 200%;
+    //     margin-bottom: 1021px;
+    // }
 }
-.requirements > p:last-child {
-    margin: 2em 0 0 -100%;
-}
+
+// OLD CODE
+// .requirements > p:last-child {
+//     margin: 2em 0 0 -100%;
+// }
+// .requirements p:last-child {
+// 	background-image: url(images/footer-new.jpg);
+// 	height: 500px;
+// 	display: flex;
+// 	align-items: center;
+// 	background-size: cover;
+// 	background-position: center center;
+// }
 
 
 @media only screen and (max-width: 1581px) {
