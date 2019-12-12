@@ -62,7 +62,7 @@ header {
 }
 
 .preamble {
-    padding: 0px 300px 0px;
+    padding: 0px 300px;
     margin-bottom: 4em;
 }
 
@@ -133,13 +133,36 @@ Main Section
 @media only screen and (max-width: 1260px) {
     header {
         margin: -80em 0 10.5em;
-        padding: 18em 0 0px 200px;
+        padding: 18em 0 0px 150px;
     }
-    .summary {
-        padding: 0px 200px;
+    .summary, .preamble {
+        padding: 0px 150px;
     }
-    .preamble {
-        padding: 0px 200px 0px;
+}
+@media only screen and (max-width: 1000px) {
+    .main {
+        grid-template-columns: 1fr;
+    }
+    header {
+        padding: 18em 0 0px 5em;
+    }
+    .summary, .preamble {
+        padding: 0px 5em;
+    }
+    h1 {
+        font-size: 70px;
+    }
+    header h2 {
+        margin: -2em 0 -1em 0.25em;
+        font-size: 35px;
+    }
+    .explanation, .participation, .benefits, .requirements {
+        h3 {
+            font-size: 25px;
+        }
+    }
+    footer {
+        grid-column: 1;
     }
 }
 @media only screen and (max-width: 700px) {
@@ -148,38 +171,15 @@ Main Section
 		flex-flow: column;
 	}
 }
-// Matt's Stuff
-@media only screen and (max-width: 811px) {
-	.intro:before {
-		height: 82em;
-	}
-	
-	.header {
-		margin: -80em 0 0;
-	}
-}
-
-@media only screen and (max-width: 731px) {
-	.preamble {
-		padding: 20px 100px 200px;
-	}
-	
-	.summary {
-		padding: 20px 100px;
-	}
-}
-
-
 @media only screen and (max-width: 592px) {
-	h1 {
-		font-size: 60px;
-	}
-	
-	h2 {
-		font-size: 40px;
-	}
-	
-	.preamble {
-    	padding: 20px 40px 200px;
-	}
+    header {
+        margin: -84em 0 4.5em;
+        padding-left: 3em;
+    }
+    .summary, .preamble {
+        padding: 0px 3em;
+    }
+    .explanation, .participation, .benefits, .requirements {
+        padding: 3em;
+    }
 }
