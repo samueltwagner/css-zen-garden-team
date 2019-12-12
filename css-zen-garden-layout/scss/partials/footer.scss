@@ -3,14 +3,14 @@
 footer {
     // background: $color-2;
     background-image: url(images/footer-new.jpg);
-	padding: 5em;
+    background-position-y: 73%;
+	padding: 2em;
     text-align: center;
     grid-column: 1/span 2;
     font-size: 50px;
 }
 
 footer a {
-	// color: $color-4;
 	margin: 10px;
 	text-decoration: none;
 }
@@ -21,7 +21,7 @@ footer a {
 }
 
 .sidebar .wrapper {
-	padding: 50px;
+	padding: 5em;
 }
 
 .sidebar .wrapper div {

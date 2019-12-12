@@ -35,7 +35,7 @@ Intro Section
 -------------------------------- */
 .intro:before {
     content: "";
-    background-image: url(images/banner-LG.jpg);
+    background-image: url(images/banner-LG-new.jpg);
     background-color: $color-2;
     width: 100%;
     height: 68em;
@@ -48,23 +48,22 @@ Intro Section
     color: $color-5;
 }
 header {
-    margin: -68em 0 0;
-    padding: 20px;
-	text-align: center;
+    // margin: -65em 0 0;
+    // padding: 10em;
+    margin: -80em 0 15.5em;
+    padding: 18em 0 0px 300px;
+    h2 {
+        margin: -3em 0 -1.5em 0.25em;
+    }
 }
 
 .summary {
-	padding: 20px 300px;
-	text-align: center;
-	p {
-		// a {
-		// 	color: $color-4;
-		// }
-	}
+    padding: 0px 300px;
 }
 
 .preamble {
-    padding: 20px 320px 200px;
+    padding: 0px 300px 0px;
+    margin-bottom: 4em;
 }
 
 @media only screen and (max-width: 991px) {
@@ -95,12 +94,17 @@ Main Section
     padding: 5em;
     color: $color-5;
     h3 {
-        font-size: 70px;
+        font-size: 48px;
+        margin-top: 0;
     }
 }
 //Top Left
 .explanation {
     background-color: $color-1;
+    &::after {
+        display: block;
+        content: "";
+    }
 }
  
 //Top Right
@@ -110,73 +114,33 @@ Main Section
 
 //Bottom Left
 .benefits {
-    padding-bottom: 0;
-    background-color: $color-2;
+    background-color: $color-2b;
 }
  
 //Bottom Right
 .requirements {
-    // padding-bottom: 0;
-    background-color: $color-1;
-    // NEW CODE TESTING
-    // position: relative;
-    // p:last-child {
-    //     background-image: url(images/footer-new.jpg);
-    //     height: 500px;
-    //     text-align: center;
-    //     background-size: cover;
-    //     background-position: center center;
-    //     position: absolute;
-    //     left: -952px;
-    //     bottom: -1021px;
-    //     width: 200%;
-    //     margin-bottom: 1021px;
-    // }
+    background-color: $color-2a;
 }
 
-// OLD CODE
-// .requirements > p:last-child {
-//     margin: 2em 0 0 -100%;
-// }
-// .requirements p:last-child {
-// 	background-image: url(images/footer-new.jpg);
-// 	height: 500px;
-// 	display: flex;
-// 	align-items: center;
-// 	background-size: cover;
-// 	background-position: center center;
-// }
-
-
-@media only screen and (max-width: 1581px) {
-    .requirements > p:last-child {
-        margin: 10em 0 0 -62%;
+@media only screen and (max-width: 1520px) {
+    h1 {
+        font-size: 117px;
     }
-    // footer {
-    //     margin: -13em 0 0 38%;
-    // }
+    header h2 {
+        margin: -2.5em 0 -1em 0.25em;
+    }
 }
-@media only screen and (max-width: 1381px) {
-    .requirements > p:last-child {
-        margin: 10em 0 0 -100%;
-        padding-left: 15%;
+@media only screen and (max-width: 1260px) {
+    header {
+        margin: -80em 0 10.5em;
+        padding: 18em 0 0px 200px;
     }
-    // footer {
-    //     margin: -13em 0 0 25%;
-    // }
-}
-@media only screen and (max-width: 1200px) {
-    .main {
-        grid-template-columns: 1fr;
+    .summary {
+        padding: 0px 200px;
     }
-    .requirements > p:last-child {
-        margin: 10em 0 0;
-        text-align: center;
+    .preamble {
+        padding: 0px 200px 0px;
     }
-    // footer {
-    //     margin: -13em 0;
-    //     text-align: center;
-    // }
 }
 @media only screen and (max-width: 700px) {
 	.wrapper {
