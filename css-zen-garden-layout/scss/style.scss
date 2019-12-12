@@ -11,7 +11,6 @@ Partials
 @import 'partials/_typography';
 @import 'partials/footer';
 @import 'partials/variables';
-s
 
 /* -------------------------------- 
 General Styles
@@ -19,7 +18,7 @@ General Styles
 body {
     background-color: $color-5;
     color: $color-1;
-    margin: 0;
+    margin: 0!important;
     padding: 0;
 }
 
@@ -50,8 +49,6 @@ Main Section
 .main {
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-.requirements {
 }
 .requirements > p:last-child {
     margin: 10em 0 10em -50%;
