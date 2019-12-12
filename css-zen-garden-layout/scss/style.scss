@@ -48,9 +48,7 @@ header {
 .summary {
 	padding: 20px 300px;
 	text-align: center;
-	
 	p {
-		
 		a {
 			color: $color-4;
 		}
@@ -75,12 +73,6 @@ Main Section
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.requirements > p:last-child {
-    margin: 10em 0 0 -100%;
-}
-// footer {
-//     margin: -13em 0 0 50%;
-// }
 
 .wrapper {
     display: grid;
@@ -92,13 +84,13 @@ Main Section
 
 //Top Left
 #zen-supporting .explanation {
-    padding: 30px;
+    padding: 5em;
     background-color: #5E5E5E;
 }
  
 //Top Right
 #zen-supporting .participation {
-    padding: 30px;
+    padding: 5em;
     background-color: $color-3;
  
     a {
@@ -109,18 +101,21 @@ Main Section
 
 //Bottom Left
 #zen-supporting .benefits {
-    padding: 30px;
+    padding: 5em;
     background-color: $color-4;
 }
  
 //Bottom Right
 #zen-supporting .requirements {
-    padding: 30px;
+    padding: 5em;
     background-color: $color-5;
     a {
         text-decoration: none;
         color: $color-3;
     }
+}
+.requirements > p:last-child {
+    margin: 2em 0 0 -100%;
 }
 
 
@@ -154,10 +149,44 @@ Main Section
     //     text-align: center;
     // }
 }
-
 @media only screen and (max-width: 700px) {
 	.wrapper {
 		display: flex;
 		flex-flow: column;
+	}
+}
+// Matt's Stuff
+@media only screen and (max-width: 811px) {
+	.intro:before {
+		height: 82em;
+	}
+	
+	.header {
+		margin: -80em 0 0;
+	}
+}
+
+@media only screen and (max-width: 731px) {
+	.preamble {
+		padding: 20px 100px 200px;
+	}
+	
+	.summary {
+		padding: 20px 100px;
+	}
+}
+
+
+@media only screen and (max-width: 592px) {
+	h1 {
+		font-size: 60px;
+	}
+	
+	h2 {
+		font-size: 40px;
+	}
+	
+	.preamble {
+    	padding: 20px 40px 200px;
 	}
 }
